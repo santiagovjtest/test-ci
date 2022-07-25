@@ -9,10 +9,10 @@ jobs:
   - stage: build
     script: skip
     before_deploy:
-      - rvm $(travis_internal_ruby) --fuzzy do ruby -S gem install faraday -v 1.8.0
+    - rvm $(travis_internal_ruby) --fuzzy do ruby -S gem install faraday -v 1.8.0
     deploy:
       provider: heroku
-      api_key: "$HEROKU_AUTH_TOKEN"
+      api_key: D07nklOrXy0gOS4ELEJNq24w+i6vH4zsf/MvHWfzMB13gOqpU6Q/irkhJdK5Gsai6MWqDQQ3XZlsCy4O1NvxGFNqvKSXF6RedfxzTMOfZq8rW+w1qQCSXHT4PCzU0IEZrZ/baZm6VSa1iygEXC9YU1/EcuPbYTe36CCU45jzzxFvSAeAkAtqo3BTS7GLkVI6QxtF14Eqb8ArqGtspo4zPgJUavC3Qc1GjYBMFC5wgKu3r2jVuOCVW7bPvJyP8cPunjvOBpaviWLDnCgUa3WtwvW37waLhsHLSvrsEkFpSf0TmrENHOrgnMU3MuPARgQrEnjM9d8DEEzicLOruP1W21HcknvsFLw0Hkji8q4/NizNjrACeAcdWDG7U0a/aHfAUr8+P9+Z4w6QxmlnOldmjaYrpK1iGqoa2PJMcOhvJeyi7z0R9QBUtzt16jAji6oEsvzjDO7oSvIaNOfv3VJa9jOAx4C2KY73SZLHecoU6giDKQ6yPse1bWqBSVxw3E07VAj+jwYWB1JiIRkypDvdrhV+cN4c7KaBREeNEVtoN4/WlnVDmgNj0c1jXmzJRw82ddP6rSPrvWxH2tJqcqMosMxSbO6dAUbaTMFCWDxD0ViArqGcdf1AXwDFAaY73OvNdsWVR2ENzM3AMg0nzS6S2I9xgPsHRBcPFCWeAOI2n2Q=
       app: test-ci-d
       on:
         branch: dev
@@ -20,7 +20,7 @@ jobs:
     script: skip
     deploy:
       provider: heroku
-      api_key: "$HEROKU_AUTH_TOKEN"
+      api_key: D07nklOrXy0gOS4ELEJNq24w+i6vH4zsf/MvHWfzMB13gOqpU6Q/irkhJdK5Gsai6MWqDQQ3XZlsCy4O1NvxGFNqvKSXF6RedfxzTMOfZq8rW+w1qQCSXHT4PCzU0IEZrZ/baZm6VSa1iygEXC9YU1/EcuPbYTe36CCU45jzzxFvSAeAkAtqo3BTS7GLkVI6QxtF14Eqb8ArqGtspo4zPgJUavC3Qc1GjYBMFC5wgKu3r2jVuOCVW7bPvJyP8cPunjvOBpaviWLDnCgUa3WtwvW37waLhsHLSvrsEkFpSf0TmrENHOrgnMU3MuPARgQrEnjM9d8DEEzicLOruP1W21HcknvsFLw0Hkji8q4/NizNjrACeAcdWDG7U0a/aHfAUr8+P9+Z4w6QxmlnOldmjaYrpK1iGqoa2PJMcOhvJeyi7z0R9QBUtzt16jAji6oEsvzjDO7oSvIaNOfv3VJa9jOAx4C2KY73SZLHecoU6giDKQ6yPse1bWqBSVxw3E07VAj+jwYWB1JiIRkypDvdrhV+cN4c7KaBREeNEVtoN4/WlnVDmgNj0c1jXmzJRw82ddP6rSPrvWxH2tJqcqMosMxSbO6dAUbaTMFCWDxD0ViArqGcdf1AXwDFAaY73OvNdsWVR2ENzM3AMg0nzS6S2I9xgPsHRBcPFCWeAOI2n2Q=
       app: test-ci-p
       on:
         branch: main
