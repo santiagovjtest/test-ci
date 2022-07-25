@@ -1,4 +1,5 @@
-# ci-me-dice-on-demand
+# test-ci with docker
+[![Build Status](https://app.travis-ci.com/santiagovjtest/test-ci.svg?branch=main)](https://app.travis-ci.com/santiagovjtest/test-ci)
 
 Sample Python app for learning CI. You will get a flexible dice on demand! 
 
