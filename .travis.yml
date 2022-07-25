@@ -15,7 +15,7 @@ jobs:
     deploy:
       provider: heroku
       api_key:
-        secure: $HEROKU_AUTH_TOKEN
+        secure: Gye5gPaLuFOMXmJ4XNXfNkXRY35o6+BHp1x81Wc8i/qi2kJNmvYjDa6UblF6aZlp3HbtUfucmMdr/eE/3U6e3bDJbdi4n2HmZwELcB+XRdpkfz6cS09hD23da/DgT01UHyTewy5Kp91xv7FzOZEC0AVIBJvOHLEIU+K2l4mXAHc0O+LQNNPaHh077M/q18oP/E72YfV9xbJjPEAOIu8eWhqz0/RMvT5+30nRsmjLuvvalCF2ObMPNLQj8IcEdy9+lhvVH/Gd8H4CijFw/qDQsuVbJh3tmBiuNkdehbCBMRTRW/s5nMnlY63Y+IqlX5Xcm7/nuNWZu6MrbRl0yyBDe9l6tqhI4OyMdVJSUiSi16dQmyCuJUpDhpte2WFAmwGtJ20uMjx1b2oEvkjkOGxMivb5OXLiL0Lac/LHTPUFZrH0TY0P0VP5uI8KDoDoFJJ9FOXUTPuLxvnn2id56qabwn/uzNhwPhDZWWiPzLX7myZGxhT9hDFb1q3L8qrmaB/Ct0EZOttuys9Ff1f6lnOqEykA1eXsH9H0CLCHcclPpFCqpEJIWiViP2DnoMfNypWA9uuEd8z9SAl/qMKDHoxtTnl2vPWausSQklDfcsoIAP23rQxN76H0CBkb0I6Nemfqxj/xti/kn39gQwXZIwMpU+CsITJ2BIXmInHTFPl/x+8=
       app: test-ci-d
       on:
         branch: dev
@@ -26,7 +26,7 @@ jobs:
     deploy:
       provider: heroku
       api_key:
-        secure: $HEROKU_AUTH_TOKEN
+        secure: Gye5gPaLuFOMXmJ4XNXfNkXRY35o6+BHp1x81Wc8i/qi2kJNmvYjDa6UblF6aZlp3HbtUfucmMdr/eE/3U6e3bDJbdi4n2HmZwELcB+XRdpkfz6cS09hD23da/DgT01UHyTewy5Kp91xv7FzOZEC0AVIBJvOHLEIU+K2l4mXAHc0O+LQNNPaHh077M/q18oP/E72YfV9xbJjPEAOIu8eWhqz0/RMvT5+30nRsmjLuvvalCF2ObMPNLQj8IcEdy9+lhvVH/Gd8H4CijFw/qDQsuVbJh3tmBiuNkdehbCBMRTRW/s5nMnlY63Y+IqlX5Xcm7/nuNWZu6MrbRl0yyBDe9l6tqhI4OyMdVJSUiSi16dQmyCuJUpDhpte2WFAmwGtJ20uMjx1b2oEvkjkOGxMivb5OXLiL0Lac/LHTPUFZrH0TY0P0VP5uI8KDoDoFJJ9FOXUTPuLxvnn2id56qabwn/uzNhwPhDZWWiPzLX7myZGxhT9hDFb1q3L8qrmaB/Ct0EZOttuys9Ff1f6lnOqEykA1eXsH9H0CLCHcclPpFCqpEJIWiViP2DnoMfNypWA9uuEd8z9SAl/qMKDHoxtTnl2vPWausSQklDfcsoIAP23rQxN76H0CBkb0I6Nemfqxj/xti/kn39gQwXZIwMpU+CsITJ2BIXmInHTFPl/x+8=
       app: test-ci-p
       on:
         branch: main
