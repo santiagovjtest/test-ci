@@ -11,7 +11,7 @@ jobs:
     deploy:
       provider: heroku
       api_key: "$HEROKU_AUTH_TOKEN"
-      app: ci-ice-dev-environment
+      app: test-ci-d
       on:
         branch: dev
   - stage: production
@@ -19,7 +19,7 @@ jobs:
     deploy:
       provider: heroku
       api_key: "$HEROKU_AUTH_TOKEN"
-      app: ci-dice-prod-environment
+      app: test-ci-p
       on:
         branch: main
 notifications:
