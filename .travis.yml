@@ -1,25 +1,27 @@
 language: python
-services:
-  - docker
-before_install:
-  # install heroku CLI
-  - wget -qO- https://toolbelt.heroku.com/install.sh | sh
-  # login to docker registries (dockerhub + heroku)
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  # - echo "$HEROKU_PASSWORD" | docker login -u "$HEROKU_USERNAME" --password=$HEROKU_PASSWORD registry.heroku.com
+os: linux
+dist: xenial
 install: pip install -r requirements.txt
 jobs:
   include:
   - stage: test
     script: python -m pytest -v tests/test_dice.py
   - stage: build
-    provider: script
-    script:
-        # push to dockerhub & heroku
-        - docker build -t $DOCKER_USERNAME/ci-me-dice .
-        - docker push $DOCKER_USERNAME/ci-me-dice
-    on:
-      branch: main
+    script: skip
+    deploy:
+      provider: heroku
+      api_key: "$HEROKU_AUTH_TOKEN"
+      app: ci-ice-dev-environment
+      on:
+        branch: dev
+  - stage: production
+    script: skip
+    deploy:
+      provider: heroku
+      api_key: "$HEROKU_AUTH_TOKEN"
+      app: ci-dice-prod-environment
+      on:
+        branch: main
 notifications:
   slack:
     secure: EfDm336D6PRtm2m17o8VagqU/ErplR4LyE7HlIbPQnxoqkj5RUUaHVe3r+aIqs7jcVLGGJ8H5ZFMpvSzF0ojig2XbhFJAjqrMuI61bPlJzyKHLpafPqmVqOvJ53qHqqmgjYSxCdxz2Nv0sNTPX5G6VUIYxxQZ1voDVf+AMzNiaMa913hA93sV5Ozbc+hviBB5Ldyf+chyAbAwq3l5ODHUPqkZ/5NFTLI6EDTN0ApSrHb8lTvvJkrKvQU700ixYqs9RHsjc0zQmGBqNyeX0Ace1pjkcrsw29l0hFhOzUeEU8bZG7UPQHLeoF01n8vYXFXsHOZV4YfZ2xDDytlQfSbIaY/JsQhm5kqBSO1mFBYVStCRuIj9v/CxgyZbsOoCRGfGFvFFDtnqeRjwv5pIxot3H55f6kzMTZ0kllg8mx2B0xWZyTbnWw31+I2zrEdNXbPQSvoeDn/asbZn1ZuxkYzBZqFBKLq+vclyWDmt3/PciLa4j8DQ2HD1eAcmT36c4dOuJ3QZTy+gNtzpsRPUMbsbFr/B1SKQm5/eAyOk7CbHLVYjHctdkBmn/GK+tHz2796mIIHtVCYYrzrHLc1NP18QfV7byUlw1B3d7uP9BPvju4+GdzCSbpbvyxpQ51OvMZ/FaDqpO7Pj1MSLXS3kcfvn5CsZoNkDEIWSl/44LPf5+g=
